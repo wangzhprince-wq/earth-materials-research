@@ -1,0 +1,145 @@
+{
+  "materials": [
+    {
+      "id": "getty-science-001",
+      "name": "Getty科学摄影",
+      "category": "科学/艺术",
+      "description": "专业科学摄影师拍摄的实验室、研究、科学主题作品",
+      "source": "Getty Images",
+      "url": "https://www.gettyimages.com",
+      "license": "Rights-managed",
+      "cost": "$$$-$$$$",
+      "quality": "专业级",
+      "reference_value": "构图、光影、叙事性",
+      "chapter": ["intro", "chapter1"],
+      "notes": "价格昂贵，但质量顶尖，适合参考风格"
+    },
+    {
+      "id": "bbc-docu-001",
+      "name": "BBC纪录片片段",
+      "category": "纪录片/科学",
+      "description": "BBC自然历史、科学纪录片的专业拍摄",
+      "source": "BBC Studios",
+      "url": "https://www.bbcstudios.com",
+      "license": "Broadcast rights",
+      "cost": "$$$$$",
+      "quality": "广播级",
+      "reference_value": "叙事节奏、镜头语言、科学传播",
+      "chapter": "all",
+      "notes": "几乎不可能获得授权，但叙事方式值得深入研究"
+    },
+    {
+      "id": "nature-video-001",
+      "name": "Nature科学视频",
+      "category": "科学/可视化",
+      "description": "Nature期刊的科学动画和数据可视化",
+      "source": "Nature Video",
+      "url": "https://www.nature.com/nature-video",
+      "license": "Educational/Editorial",
+      "cost": "$$$",
+      "quality": "专业科学可视化",
+      "reference_value": "数据呈现、科学准确性、视觉设计",
+      "chapter": ["chapter2", "chapter3"],
+      "notes": "科学准确性极高，可视化设计优秀"
+    },
+    {
+      "id": "met-museum-001",
+      "name": "大都会博物馆馆藏",
+      "category": "艺术/历史",
+      "description": "博物馆收藏的科学仪器、历史文物图像",
+      "source": "The Met Collection",
+      "url": "https://www.metmuseum.org/art/collection",
+      "license": "Museum policy",
+      "cost": "申请授权",
+      "quality": "博物馆级",
+      "reference_value": "历史质感、文物摄影、文化深度",
+      "chapter": ["chapter1"],
+      "notes": "授权流程复杂，但图像质量和文化价值高"
+    },
+    {
+      "id": "nhk-docu-001",
+      "name": "NHK纪录片风格",
+      "category": "纪录片/日本",
+      "description": "NHK科学纪录片的独特美学和叙事",
+      "source": "NHK Enterprises",
+      "url": "https://www.nhk-ep.com",
+      "license": "Broadcast rights",
+      "cost": "$$$$",
+      "quality": "日本广播级",
+      "reference_value": "东方美学、细致观察、人文关怀",
+      "chapter": "all",
+      "notes": "风格独特，值得研究其科学人文结合方式"
+    },
+    {
+      "id": "science-photo-001",
+      "name": "科学图片库",
+      "category": "科学/专业",
+      "description": "专门的科学、医学、技术图像库",
+      "source": "Science Photo Library",
+      "url": "https://www.sciencephoto.com",
+      "license": "Rights-managed",
+      "cost": "$$-$$$",
+      "quality": "专业科学",
+      "reference_value": "科学准确性、专业细节、教育价值",
+      "chapter": ["intro", "chapter1", "chapter2"],
+      "notes": "科学内容最准确，但价格较高"
+    },
+    {
+      "id": "shutterstock-premium-001",
+      "name": "Shutterstock高级素材",
+      "category": "商业/通用",
+      "description": "高质量的商业摄影和视频素材",
+      "source": "Shutterstock",
+      "url": "https://www.shutterstock.com",
+      "license": "Royalty-free",
+      "cost": "订阅制",
+      "quality": "商业级",
+      "reference_value": "制作质量、商业可行性、通用性",
+      "chapter": "all",
+      "notes": "质量稳定，授权清晰，但缺乏独特性"
+    },
+    {
+      "id": "pbs-nova-001",
+      "name": "PBS Nova系列",
+      "category": "纪录片/美国",
+      "description": "PBS科学纪录片系列的叙事风格",
+      "source": "PBS Nova",
+      "url": "https://www.pbs.org/wgbh/nova",
+      "license": "Educational broadcast",
+      "cost": "复杂授权",
+      "quality": "美国公共电视",
+      "reference_value": "科学叙事、公众教育、节目结构",
+      "chapter": "all",
+      "notes": "教育性强，叙事清晰，适合参考结构"
+    }
+  ],
+  "reference_analysis": {
+    "style_references": {
+      "bbc": {
+        "strengths": ["宏大叙事", "视觉震撼", "科学深度"],
+        "applicable_to": ["地球大场景", "历史跨度", "科学概念可视化"]
+      },
+      "nhk": {
+        "strengths": ["细致观察", "人文关怀", "美学追求"],
+        "applicable_to": ["人物特写", "情感表达", "文化深度"]
+      },
+      "nature": {
+        "strengths": ["科学准确", "数据清晰", "专业权威"],
+        "applicable_to": ["科学原理", "数据可视化", "专业内容"]
+      }
+    },
+    "cost_analysis": {
+      "prohibitive": ["BBC", "NHK", "专业博物馆"],
+      "expensive": ["Getty", "Science Photo Library"],
+      "affordable": ["Shutterstock订阅", "部分图库"],
+      "free_alternatives": ["NASA/USGS替代Getty", "Wikimedia替代博物馆"]
+    },
+    "practical_advice": [
+      "用免费素材实现70%内容",
+      "参考专业作品提升20%质量",
+      "关键10%考虑投资或自制",
+      "优先实拍无法替代的内容（院士工作）",
+      "用AI/3D补充难以获得的内容"
+    ]
+  }
+}

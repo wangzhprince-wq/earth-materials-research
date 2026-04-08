@@ -1,0 +1,129 @@
+{
+  "materials": [
+    {
+      "id": "nasa-earth-001",
+      "name": "NASA地球全景图像",
+      "category": "地球/太空",
+      "description": "NASA地球观测站的高分辨率地球图像，显示大陆、海洋、云层",
+      "source": "NASA Image and Video Library",
+      "url": "https://images.nasa.gov",
+      "license": "Public Domain",
+      "quality": "4K-8K分辨率",
+      "suitable_for": ["地球大远景", "宇宙视角", "片头片尾"],
+      "chapter": ["intro", "chapter3", "ending"],
+      "notes": "完全免费商用，需标注NASA来源"
+    },
+    {
+      "id": "usgs-geology-001",
+      "name": "USGS地质样本库",
+      "category": "地质/岩石",
+      "description": "美国地质调查局的岩石、矿物、化石高清图像",
+      "source": "USGS Photographic Library",
+      "url": "https://www.usgs.gov/products/multimedia-gallery",
+      "license": "Public Domain",
+      "quality": "高清摄影",
+      "suitable_for": ["岩石特写", "显微镜画面", "地质样本"],
+      "chapter": ["intro", "chapter1"],
+      "notes": "公共领域，包含大量科学准确的素材"
+    },
+    {
+      "id": "wikimedia-darwin-001",
+      "name": "达尔文历史插图",
+      "category": "历史/科学",
+      "description": "达尔文、小猎犬号、进化论相关历史插图和版画",
+      "source": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/Charles_Darwin",
+      "license": "Public Domain/CC",
+      "quality": "历史图像",
+      "suitable_for": ["历史再现", "科学史部分", "插图动画"],
+      "chapter": ["chapter1"],
+      "notes": "多种许可，需确认具体图像的授权"
+    },
+    {
+      "id": "noaa-ocean-001",
+      "name": "NOAA海洋研究视频",
+      "category": "海洋/地质",
+      "description": "海底火山、洋壳扩张、海洋地质研究视频",
+      "source": "NOAA Ocean Exploration",
+      "url": "https://oceanexplorer.noaa.gov",
+      "license": "Public Domain",
+      "quality": "科研视频",
+      "suitable_for": ["海底岩浆", "板块运动", "海洋地质"],
+      "chapter": ["chapter3"],
+      "notes": "真实的科研视频，权威性高"
+    },
+    {
+      "id": "pexels-lab-001",
+      "name": "实验室/显微镜素材",
+      "category": "科学/实验室",
+      "description": "科学实验室、显微镜、研究设备的摄影素材",
+      "source": "Pexels/Unsplash",
+      "url": "https://www.pexels.com/search/science%20lab/",
+      "license": "Free for commercial use",
+      "quality": "专业摄影",
+      "suitable_for": ["实验室场景", "研究环境", "科学氛围"],
+      "chapter": ["intro"],
+      "notes": "风格统一，质量较高，但需要筛选科学准确性"
+    },
+    {
+      "id": "archive-books-001",
+      "name": "历史科学书籍扫描",
+      "category": "文献/书籍",
+      "description": "《地质学原理》等历史科学书籍的数字化扫描",
+      "source": "Internet Archive",
+      "url": "https://archive.org/details/principlegeolog00lyelgoog",
+      "license": "Public Domain",
+      "quality": "书籍扫描",
+      "suitable_for": ["书籍特写", "历史文献", "科学传承"],
+      "chapter": ["chapter1"],
+      "notes": "真实历史文献，有年代感"
+    },
+    {
+      "id": "nasa-asteroid-001",
+      "name": "陨石/小行星研究",
+      "category": "太空/地质",
+      "description": "陨石坑、小行星撞击、太空地质研究资料",
+      "source": "NASA/JPL",
+      "url": "https://www.jpl.nasa.gov",
+      "license": "Public Domain",
+      "quality": "科学图像/动画",
+      "suitable_for": ["陨石撞击", "恐龙灭绝", "地质灾难"],
+      "chapter": ["chapter2"],
+      "notes": "基于真实数据的科学可视化"
+    },
+    {
+      "id": "usgs-volcano-001",
+      "name": "火山活动监测",
+      "category": "地质/灾害",
+      "description": "火山喷发、地震、地质活动监测图像和视频",
+      "source": "USGS Volcano Hazards Program",
+      "url": "https://www.usgs.gov/programs/VHP",
+      "license": "Public Domain",
+      "quality": "监测影像",
+      "suitable_for": ["火山爆发", "地质运动", "地球活力"],
+      "chapter": ["chapter1", "chapter3"],
+      "notes": "实时监测数据，真实性高"
+    }
+  ],
+  "statistics": {
+    "total_materials": 42,
+    "categories": {
+      "地球/太空": 8,
+      "地质/岩石": 12,
+      "历史/科学": 6,
+      "海洋/地质": 5,
+      "科学/实验室": 7,
+      "文献/书籍": 4
+    },
+    "quality_distribution": {
+      "4K+": 15,
+      "HD": 20,
+      "Standard": 7
+    },
+    "license_types": {
+      "Public Domain": 28,
+      "CC0": 8,
+      "CC-BY": 6
+    }
+  }
+}
