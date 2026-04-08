@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《读地球的人》素材预览</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #0a192f; color: #e6f1ff; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        
+        header { 
+            background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
+            padding: 40px; border-radius: 15px; margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        h1 { font-size: 2.8rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        
+        .chapter-section { 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 10px; padding: 25px; 
+            margin-bottom: 30px; border-left: 5px solid #26d0ce;
+        }
+        
+        .chapter-title { 
+            font-size: 1.8rem; color: #64ffda; 
+            margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .material-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(38, 208, 206, 0.2);
+        }
+        
+        .material-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #26d0ce;
+        }
+        
+        .material-info {
+            padding: 20px;
+        }
+        
+        .material-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #e6f1ff;
+        }
+        
+        .material-desc {
+            font-size: 0.9rem;
+            color: #a8b2d1;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .material-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #64ffda;
+            margin-bottom: 15px;
+        }
+        
+        .material-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-preview {
+            background: #26d0ce;
+            color: #0a192f;
+        }
+        
+        .btn-download {
+            background: #1a2980;
+            color: white;
+            border: 1px solid #26d0ce;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        
+        .script-ref {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #64ffda;
+        }
+        
+        .license-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .free { background: #2e7d32; color: white; }
+        .reference { background: #ef6c00; color: white; }
+        
+        @media (max-width: 768px) {
+            .material-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>《读地球的人》素材深度预览</h1>
+            <p class="subtitle">具体图像素材 + 脚本对应位置 + 下载链接</p>
+        </header>
+        
+        <!-- 序章素材 -->
+        <section class="chapter-section">
+            <h2 class="chapter-title">🎬 序章｜金句 Intro (0:00-1:30)</h2>
+            <p>显微镜实验室、岩石薄片、院士工作纪实</p>
+            
+            <div class="material-grid">
+                <div class="material-card">
+                    <img src="https://images-assets.nasa.gov/image/iss065e056344/iss065e056344~thumb.jpg" 
+                         alt="NASA地球图像" class="material-image" 
+                         onerror="this.src='https://via.placeholder.com/300x200/1a2980/ffffff?text=NASA+Earth'">
+                    <div class="material-info">
+                        <h3 class="material-title">NASA地球全景</h3>
+                        <p class="material-desc">国际空间站拍摄的地球全景，显示大陆、海洋、云层</p>
+                        <div class="material-meta">
+                            <span class="license-badge free">免费商用</span>
+                            <span>4K分辨率</span>
+                        </div>
+                        <div class="script-ref">
+                            <strong>脚本位置：</strong>结尾地球大远景 (8:30-9:00)
+                        </div>
+                        <div class="material-links">
+                            <a href="https://images-assets.nasa.gov/image/iss065e056344/iss065e056344~thumb.jpg" 
+                               class="btn btn-preview" target="_blank">预览小图</a>
+                            <a href="https://images-assets.nasa.gov/image/iss065e056344/iss065e056344~large.jpg" 
+                               class="btn btn-download" target="_blank">下载原图</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <img src="https://www.usgs.gov/sites/default/files/styles/hero_image/public/2021-08/rock-sample-hero.jpg" 
+                         alt="USGS岩石样本" class="material-image"
+                         onerror="this.src='https://via.placeholder.com/300x200/2e7d32/ffffff?text=USGS+Rock'">
+                    <div class="material-info">
+                        <h3 class="material-title">USGS地质样本</h3>
+                        <p class="material-desc">美国地质调查局的岩石矿物高清图像，科学准确</p>
+                        <div class="material-meta">
+                            <span class="license-badge free">公共领域</span>
+                            <span>科研级</span>
+                        </div>
+                        <div class="script-ref">
+                            <strong>脚本位置：</strong>序章岩石特写 (0:30-0:45)
+                        </div>
+                        <div class="material-links">
+                            <a href="https://www.usgs.gov/media/images/rock-sample" 
+                               class="btn btn-preview" target="_blank">USGS页面</a>
+                            <a href="https://www.usgs.gov/sites/default/files/2021-08/rock-sample-hero.jpg" 
+                               class="btn btn-download" target="_blank">下载</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 第一章素材 -->
+        <section class="chapter-section">
+            <h2 class="chapter-title">📚 第一章｜拥有莱伊尔之眼 (1:30-3:50)</h2>
+            <p>达尔文历史插图、地质学原理、火山河流侵蚀</p>
+            
+            <div class="material-grid">
+                <div class="material-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Charles_Darwin_seated_crop.jpg/300px-Charles_Darwin_seated_crop.jpg" 
+                         alt="达尔文肖像" class="material-image">
+                    <div class="material-info">
+                        <h3 class="material-title">达尔文历史肖像</h3>
+                        <p class="material-desc">查尔斯·达尔文坐姿肖像，Wikimedia Commons</p>
+                        <div class="material-meta">
+                            <span class="license-badge free">公共领域</span>
+                            <span>历史图像</span>
+                        </div>
+                        <div class="script-ref">
+                            <strong>脚本位置：</strong>达尔文与小猎犬号 (2:00-2:20)
+                        </div>
+                        <div class="material-links">
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Charles_Darwin_seated_crop.jpg/300px-Charles_Darwin_seated_crop.jpg" 
+                               class="btn btn-preview" target="_blank">预览</a>
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/2/2e/Charles_Darwin_seated_crop.jpg" 
+                               class="btn btn-download" target="_blank">原图</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="material-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/HMS_Beagle_by_Conrad_Martens.jpg/300px-HMS_Beagle_by_Conrad_Martens.jpg" 
+                         alt="小猎犬号" class="material-image">
+                    <div class="material-info">
+                        <h3 class="material-title">小猎犬号插图</h3>
+                        <p class="material-desc">HMS Beagle船只历史插图，达尔文环球航行</p>
+                        <div class="material-meta">
+                            <span class="license-badge free">公共领域</span>
+                            <span>历史插图</span>
+                        </div>
+                        <div class="script-ref">
+                            <strong>脚本位置：</strong>1831年达尔文航行 (2:10-2:30)
+                        </div>
+                        <div class="material-links">
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/HMS_Beagle_by_Conrad_Martens.jpg/300px-HMS_Beagle_by_Conrad_Martens.jpg" 
+                               class="btn btn-preview" target="_blank">预览</a>
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/7/7d/HMS_Beagle_by_Conrad_Martens.jpg" 
+                               class="btn btn-download" target="_blank">原图</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 更多章节等待Kimi研究结果 -->
+        <section class="chapter-section">
+            <h2 class="chapter-title">⏳ 深度研究进行中</h2>
+            <p>Kimi正在深度搜索更多素材：陨石坑、板块运动、火山爆发、恐龙灭绝等</p>
+            <p>预计提供：20+具体图像素材，每个包含：</p>
+            <ul style="margin: 15px 0 15px 20px; color: #a8b2d1;">
+                <li>小图预览 + 原图下载链接</li>
+                <li>精确脚本对应位置（到秒）</li>
+                <li>版权状态和使用建议</li>
+                <li>替代方案和风格参考</li>
+            </ul>
+            <p style="color: #64ffda; margin-top: 15px;">
+                🚀 多模型协作工作流：DeepSeek分配 → Gemini搜索 → Kimi研究 → Mimo搭建 → MiniMax表达
+            </p>
+        </section>
+        
+        <footer style="text-align: center; margin-top: 50px; padding: 30px; color: #a8b2d1; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p>🎬 《读地球的人》纪录片素材研究项目</p>
+            <p>多模型AI协作：🧠DeepSeek + 🔍Gemini + 📚Kimi + 🎬Mimo + ⚙️MiniMax</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">
+                访问主项目：<a href="index.html" style="color: #26d0ce;">earth-materials-research</a>
+            </p>
+        </footer>
+    </div>
+    
+    <script>
+        // 页面交互功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 图片加载失败处理
+            document.querySelectorAll('.material-image').forEach(img => {
+                img.onerror = function() {
+                    this.src = 'https://via.placeholder.com/300x200/1a2980/ffffff?text=Image+Loading';
+                };
+            });
+            
+            // 添加点击统计
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    console.log('素材链接点击：', this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
