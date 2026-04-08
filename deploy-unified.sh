@@ -1,3 +1,26 @@
+#!/bin/bash
+
+# 高度整合页面部署脚本
+echo "🚀 部署高度整合的统一素材页面到 GitHub Pages"
+
+# 检查是否在正确的目录
+if [ ! -f "unified-materials.html" ]; then
+    echo "❌ 错误：未找到 unified-materials.html 文件"
+    exit 1
+fi
+
+# 备份当前 index.html
+if [ -f "index.html" ]; then
+    cp index.html index-backup-$(date +%Y%m%d-%H%M%S).html
+    echo "✅ 已备份当前 index.html"
+fi
+
+# 使用统一素材页面作为主页面
+cp unified-materials.html index.html
+echo "✅ 已将 unified-materials.html 设置为 index.html"
+
+# 更新 README.md 中的链接
+cat > README.md << 'EOF'
 # 《读地球的人》纪录片 - 统一素材库
 
 ## 🌐 在线访问
@@ -70,3 +93,24 @@ earth-materials-research/
 
 ---
 **© 2026 《读地球的人》纪录片项目**
+EOF
+
+echo "✅ 已更新 README.md"
+
+# 提交更改
+git add .
+git commit -m "feat: 部署高度整合的统一素材页面，更新文档"
+git push origin main
+
+echo ""
+echo "🎉 部署完成！"
+echo "🌐 访问地址：https://wangzhprince-wq.github.io/earth-materials-research/"
+echo ""
+echo "📊 页面功能："
+echo "  • 70+素材集中展示"
+echo "  • 智能筛选和搜索"
+echo "  • 直接下载链接"
+echo "  • 无版权资源优先"
+echo "  • 脚本章节对应"
+echo ""
+echo "🚀 立即开始使用！"

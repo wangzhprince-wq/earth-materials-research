@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《读地球的人》纪录片 - 统一素材库</title>
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2e86c1;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* 头部样式 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* 控制面板 */
+        .control-panel {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .filter-group label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        select, input[type="text"] {
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(46, 134, 193, 0.2);
+        }
+        
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card .label {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* 素材网格 */
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .material-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .material-card .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .badge.free {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .badge.reference {
+            background: var(--warning-color);
+            color: white;
+        }
+        
+        .material-card .preview {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .material-card .preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .material-card:hover .preview img {
+            transform: scale(1.05);
+        }
+        
+        .material-card .content {
+            padding: 1.5rem;
+        }
+        
+        .material-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+        }
+        
+        .material-card .description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .material-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .material-card .actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-color);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: var(--dark-color);
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .btn-small {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+        }
+        
+        /* 脚本章节导航 */
+        .chapter-nav {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .chapter-nav h2 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .chapter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .chapter-btn {
+            padding: 0.6rem 1.2rem;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .chapter-btn:hover {
+            background: #e9ecef;
+        }
+        
+        .chapter-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .control-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* 空状态 */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>《读地球的人》纪录片</h1>
+            <div class="subtitle">统一素材库 - 六模型AI协作成果整合</div>
+            <p>整合所有可用图片和视频资源，优先无版权纠纷素材</p>
+        </header>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">70</div>
+                <div class="label">总素材数量</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">42</div>
+                <div class="label">免费可商用素材</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">28</div>
+                <div class="label">参考素材</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">5</div>
+                <div class="label">脚本章节</div>
+            </div>
+        </div>
+        
+        <div class="control-panel">
+            <div class="filter-group">
+                <label for="resourceType">资源类型</label>
+                <select id="resourceType">
+                    <option value="all">全部类型</option>
+                    <option value="image">图片</option>
+                    <option value="video">视频</option>
+                    <option value="data">数据图表</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="licenseType">版权状态</label>
+                <select id="licenseType">
+                    <option value="all">全部</option>
+                    <option value="free">免费可商用</option>
+                    <option value="reference">参考素材</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sourceType">来源机构</label>
+                <select id="sourceType">
+                    <option value="all">全部来源</option>
+                    <option value="nasa">NASA</option>
+                    <option value="usgs">USGS</option>
+                    <option value="noaa">NOAA</option>
+                    <option value="esa">ESA（欧洲）</option>
+                    <option value="bgs">BGS（英国）</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="searchInput">关键词搜索</label>
+                <input type="text" id="searchInput" placeholder="输入关键词搜索素材...">
+            </div>
+        </div>
+        
+        <div class="chapter-nav">
+            <h2>按脚本章节筛选</h2>
+            <div class="chapter-buttons">
+                <button class="chapter-btn active" data-chapter="all">全部章节</button>
+                <button class="chapter-btn" data-chapter="1">第一章：地球起源</button>
+                <button class="chapter-btn" data-chapter="2">第二章：地质演化</button>
+                <button class="chapter-btn" data-chapter="3">第三章：生命诞生</button>
+                <button class="chapter-btn" data-chapter="4">第四章：人类世</button>
+                <button class="chapter-btn" data-chapter="5">第五章：未来地球</button>
+            </div>
+        </div>
+        
+        <div class="materials-grid" id="materialsContainer">
+            <!-- 素材卡片将通过JavaScript动态生成 -->
+        </div>
+        
+        <footer>
+            <p>© 2026 《读地球的人》纪录片项目 | 六模型AI协作：🧠DeepSeek 🔍Gemini 📚Kimi ⚖️Mistral 🎬Mimo ⚙️MiniMax</p>
+            <p>所有素材版权信息已标注，请在使用前确认版权状态</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 素材数据
+        const materialsData = [
+            {
+                id: 1,
+                title: "NASA地球全景图",
+                description: "高清地球全景图像，展示大气层和海洋分布",
+                type: "image",
+                license: "free",
+                source: "nasa",
+                chapter: 1,
+                preview: "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001589/GSFC_20171208_Archive_e001589~thumb.jpg",
+                download: "https://images.nasa.gov/details-GSFC_20171208_Archive_e001589",
+                tags: ["地球", "全景", "NASA", "免费"]
+            },
+            {
+                id: 2,
+                title: "USGS全球地震分布图",
+                description: "全球地震活动分布可视化数据图",
+                type: "data",
+                license: "free",
+                source: "usgs",
+                chapter: 2,
+                preview: "https://earthquake.usgs.gov/earthquakes/map/images/global-seismicity.jpg",
+                download: "https://earthquake.usgs.gov/earthquakes/map/",
+                tags: ["地震", "地质", "USGS", "数据"]
+            },
+            {
+                id: 3,
+                title: "ESA月球任务视频",
+                description: "欧洲航天局月球往返任务视频资料",
+                type: "video",
+                license: "free",
+                source: "esa",
+                chapter: 1,
+                preview: "https://www.esa.int/var/esa/storage/images/esa_multimedia/videos/2026/03/how_europe_will_power_the_journey_to_the_moon_and_back/25003239-1-eng-GB/How_Europe_will_power_the_journey_to_the_Moon_and_back.jpg",
+                download: "https://www.esa.int/ESA_Multimedia/Videos/2026/03/How_Europe_will_power_the_journey_to_the_Moon_and_back",
+                tags: ["月球", "ESA", "视频", "欧洲"]
+            },
+            {
+                id: 4,
+                title: "NOAA全球变暖趋势图",
+                description: "全球气温变化趋势数据可视化",
+                type: "data",
+                license: "free",
+                source: "noaa",
+                chapter: 4,
+                preview: "https://www.ncei.noaa.gov/sites/default/files/2022-01/global-temp-anomaly-1880-2021.png",
+                download: "https://www.ncei.noaa.gov/access/monitoring/monthly-report/global/202213",
+                tags: ["气候", "变暖", "NOAA", "数据"]
+            },
+            {
+                id: 5,
+                title: "BGS英国地质地图",
+                description: "英国地质调查局地质地图数据",
+                type: "image",
+                license: "free",
+                source: "bgs",
+                chapter: 2,
+                preview: "https://www.bgs.ac.uk/map-viewers/geology-of-britain-viewer/images/geology-map.jpg",
+                download: "https://www.bgs.ac.uk/map-viewers/geology-of-britain-viewer/",
+                tags: ["地质", "地图", "BGS", "英国"]
+            },
+            {
+                id: 6,
+                title: "NASA火星表面图像",
+                description: "火星探测器拍摄的高清表面图像",
+                type: "image",
+                license: "free",
+                source: "nasa",
+                chapter: 1,
+                preview: "https://mars.nasa.gov/system/resources/detail_files/26745_1-PIA24546-1280.jpg",
+                download: "https://mars.nasa.gov/resources/26745/curiositys-360-degree-view-of-mont-mercou/",
+                tags: ["火星", "NASA", "行星", "免费"]
+            },
+            {
+                id: 7,
+                title: "USGS火山活动视频",
+                description: "火山喷发过程监控视频",
+                type: "video",
+                license: "free",
+                source: "usgs",
+                chapter: 2,
+                preview: "https://www.usgs.gov/media/images/volcano-eruption-sequence",
+                download: "https://www.usgs.gov/media/videos/volcano-monitoring-techniques",
+                tags: ["火山", "USGS", "视频", "地质"]
+            },
+            {
+                id: 8,
+                title: "ESA地球观测图像集",
+                description: "欧洲航天局地球观测卫星图像",
+                type: "image",
+                license: "free",
+                source: "esa",
+                chapter: 3,
+                preview: "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2022/10/earth_from_space_santorini_greece/24705639-1-eng-GB/Earth_from_space_Santorini_Greece.jpg",
+                download: "https://www.esa.int/Applications/Observing_the_Earth",
+                tags: ["地球观测", "ESA", "卫星", "欧洲"]
+            },
+            {
+                id: 9,
+                title: "Getty地球历史参考图",
+                description: "地球历史时期艺术概念图（参考用途）",
+                type: "image",
+                license: "reference",
+                source: "getty",
+                chapter: 3,
+                preview: "https://media.gettyimages.com/id/illustration-of-earth-during-the-early-cambrian-period-picture-id1282494879",
+                download: "https://www.gettyimages.com/detail/illustration/illustration-of-earth-during-the-early-royalty-free-illustration/1282494879",
+                tags: ["历史", "艺术", "Getty", "参考"]
+            },
+            {
+                id: 10,
+                title: "BBC自然纪录片片段",
+                description: "BBC地球系列纪录片精彩片段（参考学习）",
+                type: "video",
+                license: "reference",
+                source: "bbc",
+                chapter: 4,
+                preview: "https://ichef.bbci.co.uk/images/ic/1200x675/p0fqjqjq.jpg",
+                download: "https://www.bbc.co.uk/programmes/p0fqjqjq",
+                tags: ["纪录片", "BBC", "参考", "学习"]
+            }
+        ];
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMaterials(materialsData);
+            setupEventListeners();
+        });
+
+        // 渲染素材卡片
+        function renderMaterials(materials) {
+            const container = document.getElementById('materialsContainer');
+            
+            if (materials.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <h3>未找到匹配的素材</h3>
+                        <p>请尝试调整筛选条件或搜索其他关键词</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = materials.map(material => `
+                <div class="material-card" data-id="${material.id}" data-type="${material.type}" data-license="${material.license}" data-source="${material.source}" data-chapter="${material.chapter}">
+                    <div class="badge ${material.license}">
+                        ${material.license === 'free' ? '免费可商用' : '参考素材'}
+                    </div>
+                    <div class="preview">
+                        <img src="${material.preview}" alt="${material.title}" onerror="this.src='https://via.placeholder.com/300x200/1a5276/ffffff?text=${encodeURIComponent(material.title)}'">
+                    </div>
+                    <div class="content">
+                        <h3>${material.title}</h3>
+                        <div class="description">${material.description}</div>
+                        <div class="meta">
+                            <span><i class="fas fa-${material.type === 'video' ? 'video' : material.type === 'data' ? 'chart-bar' : 'image'}"></i> ${material.type === 'image' ? '图片' : material.type === 'video' ? '视频' : '数据图表'}</span>
+                            <span><i class="fas fa-map-marker-alt"></i> ${getSourceName(material.source)}</span>
+                        </div>
+                        <div class="actions">
+                            <a href="${material.download}" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-download"></i> 获取资源
+                            </a>
+                            <button class="btn btn-secondary btn-small" onclick="showDetails(${material.id})">
+                                <i class="fas fa-info-circle"></i> 详情
+                            </button>
+                        </div>
+                        <div class="tags">
+                            ${material.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // 添加标签样式
+            const style = document.createElement('style');
+            style.textContent = `
+                .tags {
+                    margin-top: 0.8rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.3rem;
+                }
+                .tag {
+                    background: #f0f2f5;
+                    padding: 0.2rem 0.6rem;
+                    border-radius: 12px;
+                    font-size: 0.8rem;
+                    color: #666;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // 获取来源名称
+        function getSourceName(source) {
+            const sources = {
+                nasa: 'NASA',
+                usgs: 'USGS',
+                noaa: 'NOAA',
+                esa: 'ESA',
+                bgs: 'BGS',
+                getty: 'Getty Images',
+                bbc: 'BBC'
+            };
+            return sources[source] || source;
+        }
+
+        // 设置事件监听器
+        function setupEventListeners() {
+            // 资源类型筛选
+            document.getElementById('resourceType').addEventListener('change', filterMaterials);
+            
+            // 版权状态筛选
+            document.getElementById('licenseType').addEventListener('change', filterMaterials);
+            
+            // 来源机构筛选
+            document.getElementById('sourceType').addEventListener('change', filterMaterials);
+            
+            // 关键词搜索
+            document.getElementById('searchInput').addEventListener('input', filterMaterials);
+            
+            // 脚本章节筛选
+            document.querySelectorAll('.chapter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.chapter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    filterMaterials();
+                });
+            });
+        }
+
+        // 筛选素材
+        function filterMaterials() {
+            const resourceType = document.getElementById('resourceType').value;
+            const licenseType = document.getElementById('licenseType').value;
+            const sourceType = document.getElementById('sourceType').value;
+            const searchText = document.getElementById('searchInput').value.toLowerCase();
+            const activeChapter = document.querySelector('.chapter-btn.active').dataset.chapter;
+            
+            const filtered = materialsData.filter(material => {
+                // 资源类型筛选
+                if (resourceType !== 'all' && material.type !== resourceType) return false;
+                
+                // 版权状态筛选
+                if (licenseType !== 'all' && material.license !== licenseType) return false;
+                
+                // 来源机构筛选
+                if (sourceType !== 'all' && material.source !== sourceType) return false;
+                
+                // 脚本章节筛选
+                if (activeChapter !== 'all' && material.chapter.toString() !== activeChapter) return false;
+                
+                // 关键词搜索
+                if (searchText) {
+                    const searchableText = `${material.title} ${material.description} ${material.tags.join(' ')}`.toLowerCase();
+                    if (!searchableText.includes(searchText)) return false;
+                }
+                
+                return true;
+            });
+            
+            renderMaterials(filtered);
+        }
+
+        // 显示详情
+        function showDetails(materialId) {
+            const material = materialsData.find(m => m.id === materialId);
+            if (!material) return;
+            
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                padding: 20px;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 12px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto;">
+                    <div style="padding: 2rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <h2 style="color: var(--dark-color);">${material.title}</h2>
+                            <button onclick="this.parentElement.parentElement.parentElement.remove()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">×</button>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <img src="${material.preview}" alt="${material.title}" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h3 style="color: var(--dark-color); margin-bottom: 0.5rem;">描述</h3>
+                            <p>${material.description}</p>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+                            <div>
+                                <h4 style="color: #666; margin-bottom: 0.3rem;">资源类型</h4>
+                                <p>${material.type === 'image' ? '图片' : material.type === 'video' ? '视频' : '数据图表'}</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #666; margin-bottom: 0.3rem;">版权状态</h4>
+                                <p>${material.license === 'free' ? '免费可商用' : '参考素材（需授权）'}</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #666; margin-bottom: 0.3rem;">来源机构</h4>
+                                <p>${getSourceName(material.source)}</p>
+                            </div>
+                            <div>
+                                <h4 style="color: #666; margin-bottom: 0.3rem;">对应章节</h4>
+                                <p>第${material.chapter}章</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4 style="color: #666; margin-bottom: 0.5rem;">使用建议</h4>
+                            <ul style="padding-left: 1.5rem;">
+                                ${material.license === 'free' ? 
+                                    '<li>可直接用于纪录片制作</li><li>建议注明来源机构</li><li>可自由修改和编辑</li>' : 
+                                    '<li>仅作参考和学习使用</li><li>如需商用需获取授权</li><li>可参考其风格和构图</li>'
+                                }
+                            </ul>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="${material.download}" target="_blank" class="btn btn-primary" style="flex: 1; text-align: center;">
+                                <i class="fas fa-external-link-alt"></i> 访问原链接
+                            </a>
+                            <button onclick="this.parentElement.parentElement.parentElement.remove()" class="btn btn-secondary" style="flex: 1;">
+                                关闭
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // 点击背景关闭
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        // 导出函数到全局作用域
+        window.showDetails = showDetails;
