@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>《读地球的人》纪录片 - 已验证素材库 (2026-04-08)</title>
+    <title>《读地球的人》纪录片 - 统一素材库 (已更新: 2026-04-08)</title>
     <style>
         :root {
             --primary-color: #1a5276;
@@ -342,52 +342,12 @@
             margin-bottom: 1rem;
             opacity: 0.5;
         }
-        /* 验证样式 */
-        .verified-material {
-            border: 2px solid #27ae60;
-        }
-        
-        .verified-material .badge.free {
-            background: #27ae60;
-        }
-        
-        .verification-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(39, 174, 96, 0.9);
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-        
-        .verification-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
-            color: #666;
-        }
-        
-        .verification-stats span {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-        <div style="position: absolute; top: 20px; right: 20px;">
-            <div style="background: #27ae60; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">
-                <i class="fas fa-shield-alt"></i> 已验证素材
-            </div>
-        </div>
             <h1>《读地球的人》纪录片</h1>
             <div class="subtitle">统一素材库 - 六模型AI协作成果整合</div>
             <p>整合所有可用图片和视频资源，优先无版权纠纷素材</p>
@@ -478,39 +438,6 @@
             <!-- 素材卡片将通过JavaScript动态生成 -->
         </div>
         
-        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; text-align: center;">
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">🔍 素材验证报告</h3>
-            <p style="color: #666; margin-bottom: 1rem;">所有素材已通过多模型AI验证，确保真实性、准确性和版权合规性。</p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="final-verification-report.md" target="_blank" style="background: #2e86c1; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-file-alt"></i> 查看完整验证报告
-                </a>
-                <a href="fixed-links.json" target="_blank" style="background: #6c757d; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-link"></i> 查看修复链接记录
-                </a>
-                <a href="quick-verify.sh" target="_blank" style="background: #17a2b8; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-tools"></i> 下载验证工具
-                </a>
-            </div>
-            <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700; color: #27ae60;">27</div>
-                    <div style="font-size: 0.9rem; color: #666;">已验证素材</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700; color: #27ae60;">100%</div>
-                    <div style="font-size: 0.9rem; color: #666;">链接有效性</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700; color: #27ae60;">9.44</div>
-                    <div style="font-size: 0.9rem; color: #666;">综合质量评分</div>
-                </div>
-                <div style="text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700; color: #27ae60;">4</div>
-                    <div style="font-size: 0.9rem; color: #666;">模型验证</div>
-                </div>
-            </div>
-        </div>
         <footer>
             <p>© 2026 《读地球的人》纪录片项目 | 六模型AI协作：🧠DeepSeek 🔍Gemini 📚Kimi ⚖️Mistral 🎬Mimo ⚙️MiniMax</p>
             <p>所有素材版权信息已标注，请在使用前确认版权状态</p>
@@ -670,7 +597,7 @@
             }
             
             container.innerHTML = materials.map(material => `
-                <div class="material-card verified-material" data-id="${material.id}" data-type="${material.type}" data-license="${material.license}" data-source="${material.source}" data-chapter="${material.chapter}">
+                <div class="material-card" data-id="${material.id}" data-type="${material.type}" data-license="${material.license}" data-source="${material.source}" data-chapter="${material.chapter}">
                     <div class="badge ${material.license}">
                         ${material.license === 'free' ? '免费可商用' : '参考素材'}
                     </div>
