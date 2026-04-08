@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>素材批量添加工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: #1a5276;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .tool-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        label {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background: #2e86c1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #1a5276;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+        
+        .preview-area {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .material-card-preview {
+            background: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .material-card-preview.reference {
+            border-left-color: #f39c12;
+        }
+        
+        .json-output {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>《读地球的人》素材批量添加工具</h1>
+            <p>快速添加新素材到统一素材库页面</p>
+        </header>
+        
+        <div class="tool-section">
+            <h2>1. 单条素材添加</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="title">素材标题 *</label>
+                    <input type="text" id="title" placeholder="例如：NASA地球全景图">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">描述 *</label>
+                    <textarea id="description" placeholder="简要描述素材内容"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="type">资源类型 *</label>
+                    <select id="type">
+                        <option value="image">图片</option>
+                        <option value="video">视频</option>
+                        <option value="data">数据图表</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="license">版权状态 *</label>
+                    <select id="license">
+                        <option value="free">免费可商用</option>
+                        <option value="reference">参考素材</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="source">来源机构 *</label>
+                    <select id="source">
+                        <option value="nasa">NASA</option>
+                        <option value="usgs">USGS</option>
+                        <option value="noaa">NOAA</option>
+                        <option value="esa">ESA（欧洲）</option>
+                        <option value="bgs">BGS（英国）</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="chapter">对应章节 *</label>
+                    <select id="chapter">
+                        <option value="1">第一章：地球起源</option>
+                        <option value="2">第二章：地质演化</option>
+                        <option value="3">第三章：生命诞生</option>
+                        <option value="4">第四章：人类世</option>
+                        <option value="5">第五章：未来地球</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preview">预览图URL *</label>
+                    <input type="text" id="preview" placeholder="https://example.com/image.jpg">
+                </div>
+                
+                <div class="form-group">
+                    <label for="download">下载/访问链接 *</label>
+                    <input type="text" id="download" placeholder="https://example.com/resource">
+                </div>
+                
+                <div class="form-group">
+                    <label for="tags">标签（逗号分隔）</label>
+                    <input type="text" id="tags" placeholder="地球, NASA, 免费, 全景">
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn" onclick="previewMaterial()">预览素材</button>
+                <button class="btn" onclick="addMaterial()">添加到列表</button>
+                <button class="btn btn-secondary" onclick="clearForm()">清空表单</button>
+            </div>
+            
+            <div id="previewArea" class="preview-area" style="display: none;">
+                <h3>素材预览</h3>
+                <div id="materialPreview"></div>
+            </div>
+        </div>
+        
+        <div class="tool-section">
+            <h2>2. 批量素材列表</h2>
+            <div id="materialsList" class="preview-area">
+                <p>暂无素材，请先添加</p>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn" onclick="generateJSON()">生成JSON数据</button>
+                <button class="btn btn-secondary" onclick="clearList()">清空列表</button>
+                <button class="btn" onclick="exportToPage()">导出到页面</button>
+            </div>
+            
+            <div id="jsonOutput" class="json-output" style="display: none;">
+                <h3>生成的JSON数据</h3>
+                <pre id="jsonContent"></pre>
+            </div>
+        </div>
+        
+        <div class="tool-section">
+            <h2>3. 快速模板</h2>
+            <div class="action-buttons">
+                <button class="btn" onclick="loadNASATemplate()">NASA地球图像模板</button>
+                <button class="btn" onclick="loadESATemplate()">ESA太空视频模板</button>
+                <button class="btn" onclick="loadUSGSTemplate()">USGS地质数据模板</button>
+                <button class="btn" onclick="loadClimateTemplate()">气候变化数据模板</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let materials = [];
+        let nextId = 11; // 从11开始，因为已有10个素材
+        
+        // 预览素材
+        function previewMaterial() {
+            const material = getFormData();
+            if (!validateMaterial(material)) return;
+            
+            const previewArea = document.getElementById('previewArea');
+            const materialPreview = document.getElementById('materialPreview');
+            
+            materialPreview.innerHTML = `
+                <div class="material-card-preview ${material.license}">
+                    <h4>${material.title}</h4>
+                    <p><strong>描述：</strong>${material.description}</p>
+                    <p><strong>类型：</strong>${material.type === 'image' ? '图片' : material.type === 'video' ? '视频' : '数据图表'}</p>
+                    <p><strong>版权：</strong>${material.license === 'free' ? '免费可商用' : '参考素材'}</p>
+                    <p><strong>来源：</strong>${getSourceName(material.source)}</p>
+                    <p><strong>章节：</strong>第${material.chapter}章</p>
+                    <p><strong>预览图：</strong><a href="${material.preview}" target="_blank">查看</a></p>
+                    <p><strong>下载链接：</strong><a href="${material.download}" target="_blank">访问</a></p>
+                    <p><strong>标签：</strong>${material.tags.join(', ')}</p>
+                </div>
+            `;
+            
+            previewArea.style.display = 'block';
+        }
+        
+        // 添加到列表
+        function addMaterial() {
+            const material = getFormData();
+            if (!validateMaterial(material)) return;
+            
+            material.id = nextId++;
+            materials.push(material);
+            updateMaterialsList();
+            clearForm();
+            
+            alert(`素材已添加到列表！当前共有 ${materials.length} 个素材`);
+        }
+        
+        // 获取表单数据
+        function getFormData() {
+            const tagsInput = document.getElementById('tags').value;
+            const tags = tagsInput ? tagsInput.split(',').map(tag => tag.trim()) : [];
+            
+            return {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                type: document.getElementById('type').value,
+                license: document.getElementById('license').value,
+                source: document.getElementById('source').value,
+                chapter: parseInt(document.getElementById('chapter').value),
+                preview: document.getElementById('preview').value,
+                download: document.getElementById('download').value,
+                tags: tags
+            };
+        }
+        
+        // 验证素材数据
+        function validateMaterial(material) {
+            const requiredFields = ['title', 'description', 'preview', 'download'];
+            for (const field of requiredFields) {
+                if (!material[field] || material[field].trim() === '') {
+                    alert(`请填写${field}字段`);
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        // 更新素材列表显示
+        function updateMaterialsList() {
+            const listDiv = document.getElementById('materialsList');
+            
+            if (materials.length === 0) {
+                listDiv.innerHTML = '<p>暂无素材，请先添加</p>';
+                return;
+            }
+            
+            let html = `<h3>已添加 ${materials.length} 个素材</h3>`;
+            materials.forEach((material, index) => {
+                html += `
+                    <div class="material-card-preview ${material.license}">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div>
+                                <h4>${material.title} (ID: ${material.id})</h4>
+                                <p>${material.description}</p>
+                                <small>${material.type} | ${material.license} | ${getSourceName(material.source)} | 第${material.chapter}章</small>
+                            </div>
+                            <button onclick="removeMaterial(${index})" style="background: #e74c3c; color: white; border: none; padding: 0.3rem 0.6rem; border-radius: 4px; cursor: pointer;">删除</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            listDiv.innerHTML = html;
+        }
+        
+        // 删除素材
+        function removeMaterial(index) {
+            if (confirm('确定删除这个素材吗？')) {
+                materials.splice(index, 1);
+                updateMaterialsList();
+            }
+        }
+        
+        // 清空表单
+        function clearForm() {
+            document.getElementById('title').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('preview').value = '';
+            document.getElementById('download').value = '';
+            document.getElementById('tags').value = '';
+            document.getElementById('previewArea').style.display = 'none';
+        }
+        
+        // 清空列表
+        function clearList() {
+            if (materials.length === 0 || confirm('确定清空所有素材吗？')) {
+                materials = [];
+                updateMaterialsList();
+            }
+        }
+        
+        // 生成JSON数据
+        function generateJSON() {
+            if (materials.length === 0) {
+                alert('请先添加素材');
+                return;
+            }
+            
+            const jsonOutput = document.getElementById('jsonOutput');
+            const jsonContent = document.getElementById('jsonContent');
+            
+            const jsonData = JSON.stringify(materials, null, 2);
+            jsonContent.textContent = jsonData;
+            jsonOutput.style.display = 'block';
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText(jsonData).then(() => {
+                alert('JSON数据已复制到剪贴板！');
+            });
+        }
+        
+        // 导出到页面
+        function exportToPage() {
+            if (materials.length === 0) {
+                alert('请先添加素材');
+                return;
+            }
+            
+            // 这里可以添加实际导出到页面的逻辑
+            alert('导出功能准备就绪！请将生成的JSON数据添加到页面代码中。');
+        }
+        
+        // 获取来源名称
+        function getSourceName(source) {
+            const sources = {
+                nasa: 'NASA',
+                usgs: 'USGS',
+                noaa: 'NOAA',
+                esa: 'ESA',
+                bgs: 'BGS',
+                other: '其他'
+            };
+            return sources[source] || source;
+        }
+        
+        // 模板函数
+        function loadNASATemplate() {
+            document.getElementById('title').value = 'NASA地球观测图像';
+            document.getElementById('description').value = 'NASA卫星拍摄的高清地球观测图像';
+            document.getElementById('type').value = 'image';
+            document.getElementById('license').value = 'free';
+            document.getElementById('source').value = 'nasa';
+            document.getElementById('chapter').value = '1';
+            document.getElementById('preview').value = 'https://images-assets.nasa.gov/image/';
+            document.getElementById('download').value = 'https://images.nasa.gov/';
+            document.getElementById('tags').value = 'NASA, 地球, 卫星, 免费';
+        }
+        
+        function loadESATemplate() {
+            document.getElementById('title').value = 'ESA太空任务视频';
+            document.getElementById('description').value = '欧洲航天局太空任务记录视频';
+            document.getElementById('type').value = 'video';
+            document.getElementById('license').value = 'free';
+            document.getElementById('source').value = 'esa';
+            document.getElementById('chapter').value = '1';
+            document.getElementById('preview').value = 'https://www.esa.int/var/esa/storage/images/';
+            document.getElementById('download').value = 'https://www.esa.int/ESA_Multimedia/Videos';
+            document.getElementById('tags').value = 'ESA, 太空, 视频, 欧洲';
+        }
+        
+        function loadUSGSTemplate() {
+            document.getElementById('title').value = 'USGS地质数据图';
+            document.getElementById('description').value = '美国地质调查局地质数据可视化图表';
+            document.getElementById('type').value = 'data';
+            document.getElementById('license').value = 'free';
+            document.getElementById('source').value = 'usgs';
+            document.getElementById('chapter').value = '2';
+            document.getElementById('preview').value = 'https://earthquake.usgs.gov/earthquakes/map/images/';
+            document.getElementById('download').value = 'https://earthquake.usgs.gov/earthquakes/map/';
+            document.getElementById('tags').value = 'USGS, 地质, 数据, 地震';
+        }
+        
+        function loadClimateTemplate() {
+            document.getElementById('title').value = '全球气候变化数据';
+            document.getElementById('description').value = '全球气温变化和气候模式数据可视化';
+            document.getElementById('type').value = 'data';
+            document.getElementById('license').value = 'free';
+            document.getElementById('source').value = 'noaa';
+            document.getElementById('chapter').value = '4';
+            document.getElementById('preview').value = 'https://www.ncei.noaa.gov/sites/default/files/';
+            document.getElementById('download').value = 'https://www.ncei.noaa.gov/access/monitoring/';
+            document.getElementById('tags').value = '气候, 变暖, NOAA, 数据';
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateMaterialsList();
+        });
+    </script>
+</body>
+</html>

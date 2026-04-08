@@ -1,0 +1,122 @@
+[
+  {
+    "id": 11,
+    "title": "NASA火山地貌图像 - 猛犸湖附近",
+    "description": "猛犸湖附近的火山地貌，包括古老的大火山口和近期形成的火山口，展示了东部内华达山脉的地质特征",
+    "type": "image",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 2,
+    "preview": "https://science.nasa.gov/wp-content/uploads/2026/04/mammoth-lakes-volcano.jpg",
+    "download": "https://science.nasa.gov/earth/earth-observatory/a-volcanic-medley-near-mammoth-lakes/",
+    "tags": ["火山", "地质", "NASA", "免费", "地貌"]
+  },
+  {
+    "id": 12,
+    "title": "NASA佛罗里达干旱监测",
+    "description": "佛罗里达州干旱状况卫星图像，显示2025年异常干燥，2026年1月以来干旱加剧",
+    "type": "image",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 4,
+    "preview": "https://science.nasa.gov/wp-content/uploads/2026/04/florida-drought.jpg",
+    "download": "https://science.nasa.gov/earth/earth-observatory/drought-parches-florida/",
+    "tags": ["干旱", "气候", "NASA", "免费", "环境"]
+  },
+  {
+    "id": 13,
+    "title": "NASA森林损失早期检测",
+    "description": "结合多颗地球观测卫星数据，比现有方法提前100天检测森林砍伐的新系统",
+    "type": "data",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 4,
+    "preview": "https://science.nasa.gov/wp-content/uploads/2026/04/forest-loss-detection.jpg",
+    "download": "https://science.nasa.gov/earth/earth-observatory/faster-detection-of-forest-loss/",
+    "tags": ["森林", "监测", "NASA", "免费", "环境"]
+  },
+  {
+    "id": 14,
+    "title": "NASA巴伦支海与北极海冰",
+    "description": "巴伦支海的开阔水域导致2026年3月北极海冰范围创卫星记录最低",
+    "type": "image",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 4,
+    "preview": "https://science.nasa.gov/wp-content/uploads/2026/04/barents-sea-ice.jpg",
+    "download": "https://science.nasa.gov/earth/earth-observatory/barents-sea-tied-to-low-arctic-sea-ice/",
+    "tags": ["北极", "海冰", "NASA", "免费", "气候"]
+  },
+  {
+    "id": 15,
+    "title": "NASA留尼汪岛火山喷发",
+    "description": "2026年2月皮通德拉富尔奈兹火山喷发，持续时间更长，熔岩量超过近期喷发",
+    "type": "image",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 2,
+    "preview": "https://science.nasa.gov/wp-content/uploads/2026/04/reunion-volcano.jpg",
+    "download": "https://science.nasa.gov/earth/earth-observatory/reunion-island-lava-reaches-the-sea/",
+    "tags": ["火山", "喷发", "NASA", "免费", "地质"]
+  },
+  {
+    "id": 16,
+    "title": "NASA哈马坦风沙尘暴",
+    "description": "2026年3月强风携带撒哈拉沙尘穿越西北非，向加那利群岛移动，降低能见度",
+    "type": "image",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 4,
+    "preview": "https://science.nasa.gov/wp-content/uploads/2026/04/harmattan-dust.jpg",
+    "download": "https://science.nasa.gov/earth/earth-observatory/march-of-the-harmattan/",
+    "tags": ["沙尘暴", "气候", "NASA", "免费", "环境"]
+  },
+  {
+    "id": 17,
+    "title": "USGS实时地震监测地图",
+    "description": "美国地质调查局全球实时地震活动监测地图，显示最近7天地震分布",
+    "type": "data",
+    "license": "free",
+    "source": "usgs",
+    "chapter": 2,
+    "preview": "https://earthquake.usgs.gov/earthquakes/map/images/global-seismicity-7day.jpg",
+    "download": "https://earthquake.usgs.gov/earthquakes/map/",
+    "tags": ["地震", "监测", "USGS", "免费", "实时"]
+  },
+  {
+    "id": 18,
+    "title": "NOAA全球海洋温度异常",
+    "description": "全球海洋表面温度异常数据，显示厄尔尼诺和拉尼娜现象的影响",
+    "type": "data",
+    "license": "free",
+    "source": "noaa",
+    "chapter": 4,
+    "preview": "https://www.ospo.noaa.gov/data/sst/anomaly/2026/anomnight.4.8.2026.gif",
+    "download": "https://www.ospo.noaa.gov/data/sst/anomaly/",
+    "tags": ["海洋", "温度", "NOAA", "免费", "气候"]
+  },
+  {
+    "id": 19,
+    "title": "ESA地球观测 - 圣托里尼岛",
+    "description": "欧洲航天局卫星拍摄的希腊圣托里尼岛图像，展示火山岛地貌",
+    "type": "image",
+    "license": "free",
+    "source": "esa",
+    "chapter": 2,
+    "preview": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2022/10/earth_from_space_santorini_greece/24705639-1-eng-GB/Earth_from_space_Santorini_Greece.jpg",
+    "download": "https://www.esa.int/Applications/Observing_the_Earth/Earth_from_Space_Santorini_Greece",
+    "tags": ["卫星", "岛屿", "ESA", "免费", "欧洲"]
+  },
+  {
+    "id": 20,
+    "title": "BGS英国地质3D模型",
+    "description": "英国地质调查局3D地质模型数据，展示地下地质结构",
+    "type": "data",
+    "license": "free",
+    "source": "bgs",
+    "chapter": 2,
+    "preview": "https://www.bgs.ac.uk/map-viewers/geology-of-britain-viewer/images/3d-geology.jpg",
+    "download": "https://www.bgs.ac.uk/map-viewers/geology-of-britain-viewer/",
+    "tags": ["3D模型", "地质", "BGS", "免费", "英国"]
+  }
+]
