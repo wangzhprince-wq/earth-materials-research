@@ -119,4 +119,89 @@
     "download": "https://www.bgs.ac.uk/map-viewers/geology-of-britain-viewer/",
     "tags": ["3D模型", "地质", "BGS", "免费", "英国"]
   }
+][
+  {
+    "id": 21,
+    "title": "NASA APOD - 月球视角地球升起",
+    "description": "2026年4月8日NASA每日天文图片，从月球视角看到的地球升起，由Artemis II任务拍摄",
+    "type": "image",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 1,
+    "preview": "https://apod.nasa.gov/apod/image/2604/earthset_700.jpg",
+    "download": "https://apod.nasa.gov/apod/ap260408.html",
+    "tags": ["地球", "月球", "NASA", "免费", "天文"]
+  },
+  {
+    "id": 22,
+    "title": "NASA气候变化数据可视化",
+    "description": "NASA地球科学部门的气候变化数据、图表和可视化资源",
+    "type": "data",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 3,
+    "preview": "https://climate.nasa.gov/internal_resources/1930",
+    "download": "https://science.nasa.gov/climate-change/",
+    "tags": ["气候", "变化", "NASA", "免费", "数据"]
+  },
+  {
+    "id": 23,
+    "title": "ESA地球观测多媒体库",
+    "description": "欧洲航天局的地球观测、行星科学和太空探索多媒体资源",
+    "type": "image",
+    "license": "free",
+    "source": "esa",
+    "chapter": 2,
+    "preview": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/",
+    "download": "https://www.esa.int/ESA_Multimedia",
+    "tags": ["欧洲", "卫星", "ESA", "免费", "观测"]
+  },
+  {
+    "id": 24,
+    "title": "BGS OpenGeoscience地质数据",
+    "description": "英国地质调查局的地质数据、地图、3D模型和可视化资源",
+    "type": "data",
+    "license": "free",
+    "source": "bgs",
+    "chapter": 4,
+    "preview": "https://www.bgs.ac.uk/geological-data/opengeoscience/images/",
+    "download": "https://www.bgs.ac.uk/geological-data/opengeoscience/",
+    "tags": ["地质", "数据", "BGS", "免费", "英国"]
+  },
+  {
+    "id": 25,
+    "title": "NOAA地球科学可视化",
+    "description": "NOAA的地球科学、海洋、大气和气候可视化资源",
+    "type": "data",
+    "license": "free",
+    "source": "noaa",
+    "chapter": 3,
+    "preview": "https://www.noaa.gov/sites/default/files/styles/scale_crop_1120x490/public/",
+    "download": "https://www.noaa.gov/media",
+    "tags": ["海洋", "气候", "NOAA", "免费", "美国"]
+  },
+  {
+    "id": 26,
+    "title": "NASA地球科学可视化工作室",
+    "description": "NASA的地球科学数据可视化，包括气候模型、卫星数据等",
+    "type": "video",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 1,
+    "preview": "https://svs.gsfc.nasa.gov/vis/a010000/a014000/a014000/thumb.jpg",
+    "download": "https://svs.gsfc.nasa.gov/",
+    "tags": ["可视化", "科学", "NASA", "免费", "动画"]
+  },
+  {
+    "id": 27,
+    "title": "全球温度变化数据图表",
+    "description": "1880年至今的全球温度变化图表、海平面上升数据、冰川融化数据",
+    "type": "data",
+    "license": "free",
+    "source": "nasa",
+    "chapter": 3,
+    "preview": "https://climate.nasa.gov/vital-signs/global-temperature/graph/",
+    "download": "https://climate.nasa.gov/vital-signs/global-temperature/",
+    "tags": ["温度", "变化", "数据", "免费", "图表"]
+  }
 ]
