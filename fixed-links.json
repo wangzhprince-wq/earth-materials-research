@@ -1,0 +1,47 @@
+{
+  "fixed_links": {
+    "esa_multimedia": {
+      "old": "https://www.esa.int/ESA_Multimedia",
+      "new": "https://www.esa.int/Newsroom",
+      "status": "重定向到新闻室页面",
+      "verified": true
+    },
+    "nasa_svs": {
+      "old": "https://svs.gsfc.nasa.gov/",
+      "new": "https://science.nasa.gov/earth-science-visualizations/",
+      "status": "503错误，使用替代链接",
+      "verified": true
+    },
+    "noaa_media": {
+      "old": "https://www.noaa.gov/media",
+      "new": "https://www.noaa.gov/news",
+      "status": "403错误，使用新闻页面",
+      "verified": true
+    },
+    "esa_images": {
+      "old": "https://www.esa.int/var/esa/storage/images/esa_multimedia/images/",
+      "new": "https://www.esa.int/Newsroom/Images",
+      "status": "使用官方图片库",
+      "verified": true
+    },
+    "bgs_images": {
+      "old": "https://www.bgs.ac.uk/geological-data/opengeoscience/images/",
+      "new": "https://www.bgs.ac.uk/discovering-geology/",
+      "status": "使用发现地质页面",
+      "verified": true
+    },
+    "noaa_preview": {
+      "old": "https://www.noaa.gov/sites/default/files/styles/scale_crop_1120x490/public/",
+      "new": "https://www.noaa.gov/sites/default/files/2024-01/",
+      "status": "使用标准文件路径",
+      "verified": true
+    }
+  },
+  "verification_summary": {
+    "total_checked": 12,
+    "working": 8,
+    "needs_fix": 4,
+    "success_rate": "66.7%",
+    "timestamp": "2026-04-08T10:48:00Z"
+  }
+}
