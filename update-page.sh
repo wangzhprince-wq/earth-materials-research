@@ -20,8 +20,8 @@ sed -i '' '/const materialsData = \[/,/\];/ {
     }
 }' unified-materials.html
 
-# 更新统计数字（从10个增加到20个）
-sed -i '' 's/"总素材数量"<\/div>.*<\/div>/"总素材数量"<\/div>\n            <\/div>\n            <div class="stat-card">\n                <div class="number">20<\/div>\n                <div class="label">最新添加素材<\/div>/' unified-materials.html
+# 更新统计数字（从10个增加到27个）
+sed -i '' 's/"总素材数量"<\/div>.*<\/div>/"总素材数量"<\/div>\n            <\/div>\n            <div class="stat-card">\n                <div class="number">27<\/div>\n                <div class="label">最新添加素材<\/div>/' unified-materials.html
 
 # 更新页面标题，显示最新更新时间
 sed -i '' 's/<title>《读地球的人》纪录片 - 统一素材库<\/title>/<title>《读地球的人》纪录片 - 统一素材库 (已更新: 2026-04-08)<\/title>/' unified-materials.html
@@ -47,9 +47,10 @@ echo "🎉 更新完成！"
 echo "🌐 访问地址：https://wangzhprince-wq.github.io/earth-materials-research/"
 echo ""
 echo "📊 新增素材："
+echo "  • 🚀 7个六模型AI深度搜索资源"
 echo "  • 🌋 6个NASA最新地球观测图像"
 echo "  • 🌍 2个USGS/NOAA实时数据"
 echo "  • 🇪🇺 1个ESA欧洲卫星图像"
 echo "  • 🇬🇧 1个BGS英国地质3D模型"
 echo ""
-echo "🚀 页面现在包含20个高质量科学素材！"
+echo "🚀 页面现在包含27个高质量科学素材！"
